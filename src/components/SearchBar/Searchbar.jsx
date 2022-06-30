@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import { API_SearchPokemon } from "../../API/API_SearchPokemon";
+import { API_SearchPokemonByName } from "../../API/API_SearchPokemonByName";
 
 import "./SearchBar.css";
 
 function Searchbar() {
   const [PokemonName, setPokemonName] = useState(" ");
-  const [Pokemon, setPokemon] = useState();
+  const [Pokemon, setPokemon] = useState("");
 
   // CAPTURAR NOMBRE BARRA DE BUSQUEDA
   let catchPokemonName = (event) => {
@@ -15,8 +15,8 @@ function Searchbar() {
 
   // BUSCAR AL POKEMON
   let searchPokemon = async (event) => {
-    let PokemonNametoLowerCase = PokemonName.toLowerCase();
-    const data = await API_SearchPokemon(PokemonNametoLowerCase);
+    let PokemonNameToLowerCase = PokemonName.toLowerCase();
+    const data = await API_SearchPokemonByName(PokemonNameToLowerCase);
     setPokemon(data);
   };
 
@@ -35,9 +35,13 @@ function Searchbar() {
       {/* MOSTRAR POKEMON */}
       <div>
         {Pokemon && (
-          <div>
-            <img src={Pokemon.sprites.front_default} alt={Pokemon.name}></img>
-            <div>{Pokemon.name}</div>
+          <div className="container">
+            <img
+              className="searchbar-pokemon-image"
+              src={Pokemon.sprites.other.home.front_default}
+              alt={Pokemon.name}
+            ></img>
+            <div>{Pokemon.name.toUpperCase()}</div>
           </div>
         )}
       </div>

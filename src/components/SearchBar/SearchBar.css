@@ -29,3 +29,28 @@
   color: white;
   padding: 10px 12px;
 }
+
+.container {
+  width: 50%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.searchbar-pokemon-image {
+  width: 100%;
+  height: auto;
+}
+
+.searchbar-pokemon-image:hover {
+  animation: shake 0.3s linear 1;
+}
+@keyframes shake {
+  33% {
+    transform: rotate(10deg);
+  }
+  66% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}

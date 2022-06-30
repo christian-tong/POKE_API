@@ -2,10 +2,7 @@ import React from "react";
 
 import "./Navbar.css";
 
-/**
- * It returns a nav element with an image element inside of it.
- * @returns A nav element with an image inside of it.
- */
+// LOGO Y ESTIL0
 function Navbar() {
   const URL_LOGO =
     "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
