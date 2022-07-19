@@ -12,6 +12,7 @@ function App() {
       <Navbar />
       <div className="App">
         <Searchbar />
+
         <Pokedex />
       </div>
     </div>

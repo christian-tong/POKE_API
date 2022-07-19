@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function Pokemon({ PokemonData, id }) {
-  const { name, url } = PokemonData;
-  const Pokemon_Name = name;
-  const Pokemon_Url = url;
+import "./Pokemon.css";
 
+function Pokemon({ PokemonData }) {
   return (
     <div className="pokemon-card">
       <div className="pokemon-card-image">
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/132.png"
-          alt={Pokemon_Name}
+          src={PokemonData.sprites.other.home.front_default}
+          alt={PokemonData.name}
         />
       </div>
-      <div>
-        <h3>{Pokemon_Name}</h3>
-        <div>#{id + 1}</div>
+      <div className="pokemon-card-info">
+        <div className="pokemon-card-info-description">
+          <h3>{PokemonData.name}</h3>
+          <div>#{PokemonData.id}</div>
+        </div>
+        <div className="pokemon-card-type">
+          <div className="pokemon-card-type-info">
+            {PokemonData.types.map((type, id) => {
+              return (
+                <div className="pokemon-card-type-info-text" key={id}>
+                  {type.type.name}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
-      <div>{Pokemon_Url}</div>
     </div>
   );
 }

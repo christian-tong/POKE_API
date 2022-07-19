@@ -24,7 +24,7 @@ function Searchbar() {
     <div className="searchbar-container">
       {/* BARRA DE BUSQUEDA */}
       <div className="searchbar-container-search">
-        <input placeholder="Buscar Pokemon..." onChange={catchPokemonName} />
+        <input placeholder="Buscar Pokemon..." onChange={catchPokemonName}  aria-label="Search"/>
       </div>
 
       {/* BOTON BUSCAR POKEMON */}
